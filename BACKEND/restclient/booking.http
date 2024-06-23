@@ -1,0 +1,29 @@
+### Book an Event
+POST http://localhost:5300/bookings
+Content-Type: application/json
+
+{
+    "user_id": "1234567",
+    "event_id": "06a83e6f-dda1-4506-8688-a0cc60ec0563"
+}
+
+### Get All Bookings
+GET http://localhost:5300/bookings
+Content-Type: application/json
+
+### Get Bookings by User
+GET http://localhost:5300/bookings/user/1c407bba-cdb3-443b-8e5c-313e3b80bd5c
+Content-Type: application/json
+
+### Get Bookings by Event
+GET http://localhost:5300/bookings/event/fd05c399-8336-4b7b-8e1e-535eb8fc83e2
+Content-Type: application/json
+
+### Cancel a Booking
+DELETE http://localhost:5300/bookings
+Content-Type: application/json
+
+{
+    "user_id": "1c407bba-cdb3-443b-8e5c-313e3b80bd5c",
+    "event_id": "06a83e6f-dda1-4506-8688-a0cc60ec0563"
+}

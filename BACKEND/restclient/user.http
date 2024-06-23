@@ -1,0 +1,36 @@
+POST http://localhost:5300/users/register
+Content-Type: application/json
+
+{
+    "username": "timo",
+    "email": "timo2@example.com",
+    "password": "password"
+}
+
+### FETCH ALL USERS
+GET http://localhost:5300/users/fetch-all
+Content-Type: application/json
+
+
+### FETCH SINGLE USER
+GET http://localhost:5300/users/1c407bba-cdb3-443b-8e5c-313e3b80bd5c
+Content-Type: application/json
+
+###SWITCH ROLES
+PUT http://localhost:5300/users/switch-role
+Content-Type: application/json
+
+{
+    "user_id":"1c407bba-cdb3-443b-8e5c-313e3b80bd5c"
+}
+
+
+###UPDATE USER DETAILS
+PUT http://localhost:5300/users/1c407bba-cdb3-443b-8e5c-313e3b80bd5c
+Content-Type: application/json
+
+{
+    "username": "MuchiriT",
+    "email": "timomuchiri@gmail.com",
+    "password": "pass@123"
+}

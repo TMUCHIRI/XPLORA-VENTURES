@@ -1,0 +1,35 @@
+POST http://localhost:5300/events/create
+Content-Type: application/json
+
+{
+    "description": "Nairobi Safari Walk",
+    "destination": "Nairobi National Park",
+    "duration": "1 day",
+    "price": "500.00",
+    "tour_type": "Game walk"
+}
+
+
+###VIEW ALL EVENTS
+GET http://localhost:5300/events/all-events
+Content-Type: application/json
+
+
+###VIEW ONE EVENT
+GET http://localhost:5300/events/467f7235-41f7-4039-8b3d-5efa483edf0b
+
+###UPDATE EVENT
+PUT http://localhost:5300/events/467f7235-41f7-4039-8b3d-5efa483edf0b
+Content-Type: application/json
+
+{
+    "description": "Tsavo Safari Walk",
+    "destination": "Tsavo National Park",
+    "duration": "1 day",
+    "price": "1000.00",
+    "tour_type": "Game walk"
+}
+
+
+###DELETE EVENT
+DELETE http://localhost:5300/events/2b7d1824-4c3d-4130-9ef7-496f7baf42dd
