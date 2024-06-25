@@ -1,0 +1,89 @@
+<header class="navbar">
+    <div class="logo">Xplora</div>
+    <nav>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/logout" class="no-smooth-scroll">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section class="dashboard">
+    <div class="container">
+      <h1>Admin Dashboard</h1>
+      
+      <h2>Users Management</h2>
+      <button (click)="fetchAllUsers()">Fetch All Users</button>
+      <ul>
+        <li *ngFor="let user of users">
+          {{ user.username }} - {{ user.email }}
+          <button (click)="viewUser(user.user_id)">View</button>
+          <button (click)="switchUserRole(user.user_id)">Switch Role</button>
+        </li>
+      </ul>
+  
+      <h2>Events Management</h2>
+      <button (click)="fetchAllEvents()">Fetch All Events</button>
+      <ul>
+        <li *ngFor="let event of events">
+          {{ event.description }} - {{ event.destination }} - {{ event.price }}$
+          <button (click)="viewEvent(event.event_id)">View</button>
+          <button (click)="deleteEvent(event.event_id)">Delete</button>
+        </li>
+      </ul>
+  
+      <p>Number of users: {{ users.length }}</p>
+<p>Number of events: {{ events.length }}</p>
+
+      <h3>Create Event</h3>
+      <form (ngSubmit)="createEvent()">
+        <label for="description">Description:</label>
+        <input type="text" id="description" [(ngModel)]="newEvent.description" name="description" required />
+        
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" [(ngModel)]="newEvent.destination" name="destination" required />
+        
+        <label for="duration">Duration:</label>
+        <input type="text" id="duration" [(ngModel)]="newEvent.duration" name="duration" required />
+        
+        <label for="price">Price:</label>
+        <input type="number" id="price" [(ngModel)]="newEvent.price" name="price" required />
+        
+        <label for="tour_type">Tour Type:</label>
+        <input type="text" id="tour_type" [(ngModel)]="newEvent.tour_type" name="tour_type" required />
+        
+        <button type="submit">Create Event</button>
+      </form>
+  
+      <h3>Update Event</h3>
+      <form (ngSubmit)="update_Event()">
+        <label for="updateEventId">Event ID:</label>
+        <input type="text" id="updateEventId" [(ngModel)]="updateEventId" name="updateEventId" required />
+  
+        <label for="updateDescription">Description:</label>
+        <input type="text" id="updateDescription" [(ngModel)]="updateEvent.description" name="updateDescription" required />
+        
+        <label for="updateDestination">Destination:</label>
+        <input type="text" id="updateDestination" [(ngModel)]="updateEvent.destination" name="updateDestination" required />
+        
+        <label for="updateDuration">Duration:</label>
+        <input type="text" id="updateDuration" [(ngModel)]="updateEvent.duration" name="updateDuration" required />
+        
+        <label for="updatePrice">Price:</label>
+        <input type="number" id="updatePrice" [(ngModel)]="updateEvent.price" name="updatePrice" required />
+        
+        <label for="updateTourType">Tour Type:</label>
+        <input type="text" id="updateTourType" [(ngModel)]="updateEvent.tour_type" name="updateTourType" required />
+        
+        <button type="submit">Update Event</button>
+      </form>
+  
+    </div>
+  </section>
+  
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 Xplora Tours and Travels. All Rights Reserved.</p>
+    </div>
+  </footer>
+  

@@ -3,7 +3,7 @@ POST http://localhost:5300/bookings
 Content-Type: application/json
 
 {
-    "user_id": "1234567",
+    "user_id": "e36789bc-2977-4aab-b667-4150a9af687d",
     "event_id": "06a83e6f-dda1-4506-8688-a0cc60ec0563"
 }
 

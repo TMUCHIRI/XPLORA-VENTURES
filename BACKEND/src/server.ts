@@ -3,8 +3,21 @@ import bodyParser from 'body-parser';
 import user_router from './routes/user.routes';
 import event_router from './routes/event.routes';
 import booking_router from './routes/booking.routes';
+import cors from 'cors'
 
 const app = express();
+
+const allowedOrigins = ['http://localhost:4200' ];
+
+const corsOptions = {
+  origin: function (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
 
 app.use((req: Request, res: Response, next: NextFunction) => {
     res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:5500');
@@ -23,6 +36,7 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 app.use(express.json());
+app.use(cors())
 
 app.use('/users', user_router);
 app.use('/events', event_router);

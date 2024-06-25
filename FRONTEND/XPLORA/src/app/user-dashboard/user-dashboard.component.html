@@ -1,0 +1,44 @@
+<header class="navbar">
+  <div class="logo">Xplora</div>
+  <nav>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/profile" class="no-smooth-scroll">Profile</a></li>
+      <li><a routerLink="/bookings" class="no-smooth-scroll">Bookings</a></li>
+      <li><a routerLink="/logout" class="no-smooth-scroll">Logout</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="dashboard">
+  <div class="container">
+    <h1>Welcome, {{ userName }}</h1>
+    <p>Track your bookings and manage your profile.</p>
+    
+    <div class="events">
+      <h2>All Events</h2>
+      <ul>
+        <li *ngFor="let event of events">
+          Event: {{ event.description }} ({{ event.destination }})
+          <button (click)="bookEvent(event.event_id)">Book</button>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="bookings">
+      <h2>Your Bookings</h2>
+      <ul>
+        <li *ngFor="let booking of bookings">
+          Booking: {{ booking.event_id }} <!-- Adjust this as needed to show relevant booking info -->
+          <button (click)="cancelBooking(booking.event_id)">Cancel</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2024 Xplora Tours and Travels. All Rights Reserved.</p>
+  </div>
+</footer>

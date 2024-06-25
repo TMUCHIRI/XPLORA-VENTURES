@@ -1,11 +1,12 @@
+###CREATE EVENT
 POST http://localhost:5300/events/create
 Content-Type: application/json
 
 {
-    "description": "Nairobi Safari Walk",
-    "destination": "Nairobi National Park",
+    "description": "Safari Walk",
+    "destination": "Tsavo National Park",
     "duration": "1 day",
-    "price": "500.00",
+    "price": "600.00",
     "tour_type": "Game walk"
 }
 

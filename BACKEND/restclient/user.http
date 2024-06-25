@@ -1,9 +1,19 @@
+###REGISTER USER
 POST http://localhost:5300/users/register
 Content-Type: application/json
 
 {
-    "username": "timo",
-    "email": "timo2@example.com",
+    "username": "user",
+    "email": "user@example.com",
+    "password": "user"
+}
+
+###LOGIN USER
+POST http://localhost:5300/users/login
+Content-Type: application/json
+
+{
+    "email": "timo3@example.com",
     "password": "password"
 }
 
@@ -13,7 +23,7 @@ Content-Type: application/json
 
 
 ### FETCH SINGLE USER
-GET http://localhost:5300/users/1c407bba-cdb3-443b-8e5c-313e3b80bd5c
+GET http://localhost:5300/users/e36789bc-2977-4aab-b667-4150a9af687d
 Content-Type: application/json
 
 ###SWITCH ROLES
@@ -21,7 +31,7 @@ PUT http://localhost:5300/users/switch-role
 Content-Type: application/json
 
 {
-    "user_id":"1c407bba-cdb3-443b-8e5c-313e3b80bd5c"
+    "user_id":"a17e8523-fd21-42ae-a84b-5a3aa16c957b"
 }
 
 
